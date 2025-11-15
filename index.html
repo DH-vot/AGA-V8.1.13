@@ -347,7 +347,25 @@ function openReportWindow(title, bodyHtml){
       }
     </style>
   </head><body>${bodyHtml}
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, doc, setDoc, onSnapshot } 
+    from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
+  const firebaseConfig = {
+    apiKey: "AIzaSyDbVELVBtmoS1m0761QQ2kI5Cvsjc4cjwc",
+    authDomain: "destineaga.firebaseapp.com",
+    projectId: "destineaga",
+    storageBucket: "destineaga.firebasestorage.app",
+    messagingSenderId: "997907169795",
+    appId: "1:997907169795:web:e06e62d522a13b01e48436",
+    measurementId: "G-CS7C7LQVD5"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  window.db = db;
+</script>
 
 </body></html>`);
   w.document.close();
